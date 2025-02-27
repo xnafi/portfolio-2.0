@@ -40,6 +40,9 @@ body {
   .sub_color{
     @apply text-[#6C6C6C]
   }
+  .div-dark {
+    @apply bg-gray-50 dark:bg-gray-900 text-black dark:text-white;
+  }
 }
 
 .text_head {

@@ -15,7 +15,7 @@ const Navbar = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="flex justify-between items-center p-5 bg-gray-50 dark:bg-gray-900 text-black dark:text-white shadow-md">
+    <nav className="flex justify-between items-center p-5 div-dark shadow-md">
       {/* Logo */}
       <div className="font-bold text-xl flex items-center">
         <span className="text-green-500 text-2xl mr-1">●</span> TA.
