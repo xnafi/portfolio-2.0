@@ -4,8 +4,8 @@ import { IoDocumentText } from "react-icons/io5";
 
 const Banner: React.FC = () => {
   return (
-    <section className="flex items-center justify-center div-dark px-6 ">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 px-4 py-4 mx-auto relative">
+    <section className="flex items-center justify-center div-dark px-6 py-6">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 mx-auto relative">
         
         {/* Left - Profile Image & Social Links */}
         <div className="flex-1 flex flex-col items-center md:items-start">
@@ -14,14 +14,14 @@ const Banner: React.FC = () => {
             <img
               src="https://i.postimg.cc/7Z7yy9b4/5556468.png"
               alt="Profile"
-              className="w-72 h-96 object-cover rounded-xl border-4 border-green-400 shadow-lg"
+              className="w-96 h-96 object-cover rounded-xl border-4 border-green-400 shadow-lg"
             />
             {/* Overlay Box */}
             <div className="absolute inset-0 border-2 border-green-400 rounded-xl transform translate-x-4 translate-y-4"></div>
           </div>
 
           {/* Social Links (Below the Image) */}
-          <div className="flex gap-4 mt-12">
+          <div className="flex gap-4 mt-10">
             <a href="#" className="flex items-center gap-2 px-5 py-2 btn-dark rounded-lg ">
               <FaGithub className="text-xl" /> GitHub
             </a>
@@ -42,7 +42,7 @@ const Banner: React.FC = () => {
               Hello, I'm Alexa, a <br />
               UI/UX <span className="text-green-400">Designer.</span>
             </h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+            <p className="text-sm para-text mt-4">
               I'm a passionate UI/UX designer with a mission to create delightful and intuitive digital experiences. With a strong foundation in design principles and a keen eye for detail I specialised in translating complex ideas.
             </p>
 
