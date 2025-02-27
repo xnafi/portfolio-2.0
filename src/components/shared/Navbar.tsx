@@ -16,6 +16,9 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center p-5 div-dark shadow-md">
+      <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
+
+      
       {/* Logo */}
       <div className="font-bold text-xl flex items-center">
         <span className="text-green-500 text-2xl mr-1">●</span> TA.
@@ -55,9 +58,10 @@ const Navbar = () => {
           {theme === "light" ? "🌙" : "🔆"}
         </button>
 
-        <button className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-400 transition">
+        <button className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 transition">
           Hire Me!
         </button>
+      </div>
       </div>
     </nav>
   );
