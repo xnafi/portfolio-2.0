@@ -43,6 +43,9 @@ body {
   .div-dark {
     @apply bg-gray-50 dark:bg-gray-900 text-black dark:text-white;
   }
+  .btn-dark {
+    @apply bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-green-500 dark:hover:bg-green-700;
+  }
 }
 
 .text_head {
