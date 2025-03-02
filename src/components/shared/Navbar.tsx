@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -19,19 +20,32 @@ const Navbar = () => {
       <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
 
       
-      {/* Logo */}
-      <div className="font-bold text-xl flex items-center">
-        <span className="text-green-500 text-2xl mr-1">●</span> TA.
-      </div>
+    {/* Logo - Now Clickable */}
+<div className="font-bold text-xl flex items-center">
+  <Link href="/">
+    <span className="text-green-500 text-2xl mr-1 cursor-pointer">●</span>
+    <span className="cursor-pointer">TA.</span>
+  </Link>
+</div>
 
-      {/* Navigation Links */}
-      <div className="space-x-8 hidden md:flex">
-        <a href="#service" className="hover:text-green-500 transition">Service</a>
-        <a href="#works" className="hover:text-green-500 transition">Works</a>
-        <a href="#resume" className="hover:text-green-500 transition">Resume</a>
-        <a href="#skills" className="hover:text-green-500 transition">Skills</a>
-        <a href="#contact" className="hover:text-green-500 transition">Contact</a>
-      </div>
+{/* Navigation Links */}
+<div className="space-x-8 hidden md:flex">
+  <Link href="/AwesomeService" className="hover:text-green-500 transition">
+    Service
+  </Link>
+  <Link href="#works" className="hover:text-green-500 transition">
+    Works
+  </Link>
+  <Link href="#resume" className="hover:text-green-500 transition">
+    Resume
+  </Link>
+  <Link href="#skills" className="hover:text-green-500 transition">
+    Skills
+  </Link>
+  <Link href="#contact" className="hover:text-green-500 transition">
+    Contact
+  </Link>
+</div>
 
       {/* Social Icons & Theme Toggle */}
       <div className="flex items-center space-x-4">
