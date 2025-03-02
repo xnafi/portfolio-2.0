@@ -22,7 +22,7 @@ const services = [
 
 const AwesomeService = () => {
   return (
-    <div className="relative div-dark py-10 px-4 md:px-16">
+    <div className="relative  py-10 px-4 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between">
         {/* Left Side - Text Section */}
         <div className="md:w-1/2 relative">
@@ -52,7 +52,7 @@ const AwesomeService = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`flex bg-green-50 dark:bg-gray-900 items-center justify-between p-5 rounded-lg card-dark border transition-all ${
+              className={`flex items-center justify-between p-5 rounded-lg card-dark border transition-all ${
                 index === 1
                   ? "bg-transparent border-green-200 dark:border-green-800"
                   : "bg-transparent border-green-200 dark:border-green-800"
@@ -74,7 +74,7 @@ const AwesomeService = () => {
                 </div>
               </div>
               <div
-                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all ${
+                className={`w-10 h-10 text-3xl flex items-center justify-center rounded-full transition-all ${
                   index === 1
                     ? "bg-green-200 dark:bg-green-600 text-green-700 dark:text-green-200"
                     : "bg-green-200 dark:bg-green-600 text-green-700 dark:text-green-200"

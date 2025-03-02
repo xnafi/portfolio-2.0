@@ -4,7 +4,7 @@ import { IoDocumentText } from "react-icons/io5";
 
 const Banner: React.FC = () => {
   return (
-    <section className="flex items-center justify-center div-dark px-6 py-6">
+    <section className="flex items-center justify-center  px-6 py-6">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 mx-auto relative">
         
         {/* Left - Profile Image & Social Links */}
