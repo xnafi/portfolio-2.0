@@ -27,9 +27,9 @@ const ShowCase: React.FC = () => {
         </div>
 
         {/* Item 4 */}
-        <div>
-          <h2 className="text-4xl font-bold text-green-500">300+</h2>
-          <p className="text-gray-600 dark:text-gray-400">
+        <div className="border-r border-dark last:border-r-0">
+          <h2 className="text-5xl font-bold text-green-500">300+</h2>
+          <p className="para-text mt-2">
             Top Talents Projects
           </p>
         </div>
