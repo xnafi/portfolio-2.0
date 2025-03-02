@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-// import { FiArrowRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
 
 const Intro = () => {
@@ -11,7 +10,6 @@ const Intro = () => {
   return (
     <div className="py-10 px-4 md:px-16 flex items-center justify-center mt-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        
         {/* Text Section */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-100">
@@ -36,27 +34,20 @@ const Intro = () => {
         </div>
 
         {/* Image Section */}
-        <div className="relative flex-1 flex justify-center ">
-          <div className="relative">
-            {/* Profile Image */}
+        <div className="relative flex-1 flex justify-center md:justify-end">
+          <div className="relative w-[300px] md:w-[350px]">
             <Image
-              src="https://i.postimg.cc/7Z7yy9b4/5556468.png" 
+              src="https://i.postimg.cc/7Z7yy9b4/5556468.png"
               alt="Tawam"
               width={350}
               height={350}
-              className="rounded-lg shadow-lg ml-44"
+              className="rounded-lg shadow-lg w-full object-cover"
             />
-
-            {/* Background Gradient */}
-            {/* <div
-              className="absolute inset-0 bg-green-500 rounded-lg blur-2xl opacity-20"
-            ></div> */}
-
             {/* Dotted Pattern */}
-            <div className="absolute -top-24 -right-5 w-44 h-24 grid grid-cols-6 gap-2">
-            {Array.from({ length: 30 }).map((_, i) => (
-              <span key={i} className="w-2 h-2 bg-green-500 rounded-full"></span>
-            ))}
+            <div className="absolute -top-10 md:-top-24 -right-5 w-36 md:w-44 h-20 md:h-24 grid grid-cols-6 gap-2">
+              {Array.from({ length: 30 }).map((_, i) => (
+                <span key={i} className="w-2 h-2 bg-green-500 rounded-full"></span>
+              ))}
             </div>
           </div>
         </div>
