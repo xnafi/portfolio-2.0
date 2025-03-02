@@ -2,7 +2,7 @@ import React from "react";
 
 const ShowCase: React.FC = () => {
   return (
-    <div className="py-10 px-4 div-dark">
+    <div className="py-10 px-4 bg-gradient-to-r from-green-50 to-gray-100 dark:from-black dark:to-gray-900">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-left ">
         {/* Item 1 */}
         <div className="border-r border-dark last:border-r-0">
