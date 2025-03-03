@@ -3,6 +3,7 @@ import Banner from "@/components/view/Banner/Banner";
 import Contact from "@/components/view/Contact/Contact";
 import EducationExperience from "@/components/view/EducationExperience/EducationExperience";
 import Intro from "@/components/view/Intro/Intro";
+import LogoSection from "@/components/view/LogoSection/LogoSection";
 import News from "@/components/view/News/News";
 import ShowCase from "@/components/view/ShowCase/ShowCase";
 import Skills from "@/components/view/Skills/Skills";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <ShowCase />
       <AwesomeService />
       <Intro />
+      <LogoSection />
       <EducationExperience />
       <Skills />
       <Testimonials />

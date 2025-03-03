@@ -53,7 +53,7 @@ const Skills = () => {
               Ut blandit fermentum, nulla neque mi convallis quis.
             </p>
             {/* Dotted Pattern */}
-            <div className="w-44 h-24 grid grid-cols-6 gap-2 pt-44">
+            <div className="w-44 h-24 grid grid-cols-6 gap-2 pt-36">
               {Array.from({ length: 30 }).map((_, i) => (
                 <span
                   key={i}
@@ -68,7 +68,7 @@ const Skills = () => {
             {skillsData.map((skill, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 bg-green-100 dark:bg-green-900 rounded-lg p-6 shadow-lg hover:scale-105 transition-transform"
+                className="flex items-center gap-4  rounded-lg p-6  hover:scale-105 transition-transform"
               >
                 <div>
                   <div className="border border-green-500 p-2 rounded-full text-green-500">
