@@ -22,7 +22,7 @@ const services = [
 
 const AwesomeService = () => {
   return (
-    <div className="relative  py-10 px-4 md:px-16">
+    <div id="AwesomeService" className="relative  py-10 px-4 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between">
         {/* Left Side - Text Section */}
         <div className="md:w-1/2 relative">

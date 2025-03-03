@@ -4,6 +4,7 @@ import EducationExperience from "@/components/view/EducationExperience/Education
 import Intro from "@/components/view/Intro/Intro";
 import ShowCase from "@/components/view/ShowCase/ShowCase";
 import Skills from "@/components/view/Skills/Skills";
+import Testimonials from "@/components/view/Testimonials/Testimonials";
 
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Intro />
       <EducationExperience />
       <Skills />
+      <Testimonials />
       
     </div>
   );

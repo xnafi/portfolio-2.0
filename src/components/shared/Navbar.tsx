@@ -30,12 +30,12 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="space-x-8 hidden md:flex">
-          <Link
-            href="/AwesomeService"
+          <a
+            href="#AwesomeService"
             className="hover:text-green-500 transition"
           >
             Service
-          </Link>
+          </a>
           <Link href="#works" className="hover:text-green-500 transition">
             Works
           </Link>
