@@ -1,12 +1,12 @@
 import React from "react";
-// import { FaArrowRight } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
 
 const services = [
   {
     title: "Website Design",
     projects: "80+ Project",
-    image: "https://i.postimg.cc/0ywscHJr/web-design-technology-browsing-programming-concept.jpg",
+    image:
+      "https://i.postimg.cc/0ywscHJr/web-design-technology-browsing-programming-concept.jpg",
   },
   {
     title: "Mobile App Design",
@@ -32,8 +32,7 @@ const AwesomeService = () => {
           <p className="para-text mt-4 max-w-md">
             Eget malesuada tortor ut sed. Tincidunt viverra nisl vehicula
             vestibulum. Ut blandit fermentum, nulla neque mi convallis quis
-            interdum sagittis. nulla neque mi convallis quis
-            interdum sagittis.
+            interdum sagittis. nulla neque mi convallis quis interdum sagittis.
           </p>
           <button className="mt-6 px-6 py-2 btn-dark rounded-lg font-semibold">
             ALL SERVICE
@@ -42,7 +41,10 @@ const AwesomeService = () => {
           {/* Dotted Pattern Below Button */}
           <div className="mt-16 w-44 h-24 grid grid-cols-6 gap-2">
             {Array.from({ length: 30 }).map((_, i) => (
-              <span key={i} className="w-2 h-2 bg-green-500 rounded-full"></span>
+              <span
+                key={i}
+                className="w-2 h-2 bg-green-500 rounded-full"
+              ></span>
             ))}
           </div>
         </div>
