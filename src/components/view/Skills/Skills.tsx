@@ -1,14 +1,7 @@
 "use client";
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaReact, FaFigma, FaJava } from "react-icons/fa";
-import {
-  SiJavascript,
-  SiTailwindcss,
-  SiAdobephotoshop,
-  SiPhp,
-  SiMysql,
-  SiAstro,
-} from "react-icons/si";
+import { FaHtml5, FaReact, FaFigma } from "react-icons/fa";
+import { SiPhp } from "react-icons/si";
 
 const skillsData = [
   {
@@ -73,7 +66,9 @@ const Skills = () => {
                   <div className="border border-green-500 p-2 rounded-full text-green-500">
                     {skill.icon}
                   </div>
-                  <p className="text-green-500 font-semibold mt-2 ml-3">{skill.percentage}</p>
+                  <p className="text-green-500 font-semibold mt-2 ml-3">
+                    {skill.percentage}
+                  </p>
                 </div>
                 <div>
                   <h3 className="text-base md:text-lg font-bold text-gray-800 dark:text-gray-100">

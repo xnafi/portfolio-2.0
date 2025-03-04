@@ -1,12 +1,8 @@
-"use client";
-import React from "react";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+
 import { GoArrowUpRight } from "react-icons/go";
 
 const Intro = () => {
-  const { theme } = useTheme();
-
   return (
     <div className="py-10 px-4 sm:px-8 md:px-16 flex items-center justify-center mt-8 sm:mt-12 md:mt-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12">
@@ -20,15 +16,15 @@ const Intro = () => {
           </h2>
           <div className="mt-4 sm:mt-6 text-gray-700 dark:text-gray-300 space-y-4 sm:space-y-5">
             <p className="flex items-center gap-2 text-sm para-text sm:text-base md:text-lg">
-              <GoArrowUpRight className="text-green-500 text-3xl sm:text-4xl" /> I am
-              working as a freelancer right now. I could create graphic design
-              projects linked to all companies.
+              <GoArrowUpRight className="text-green-500 text-3xl sm:text-4xl" />{" "}
+              I am working as a freelancer right now. I could create graphic
+              design projects linked to all companies.
             </p>
             <p className="flex items-center gap-2 text-sm para-text sm:text-base md:text-lg">
-              <GoArrowUpRight className="text-green-500 text-5xl sm:text-6xl" /> With
-              my graphic design skills, I can help you create awesome designs for
-              your firm or business. I am constantly trying to improve my
-              abilities to support various businesses.
+              <GoArrowUpRight className="text-green-500 text-5xl sm:text-6xl" />{" "}
+              With my graphic design skills, I can help you create awesome
+              designs for your firm or business. I am constantly trying to
+              improve my abilities to support various businesses.
             </p>
           </div>
         </div>
@@ -47,7 +43,10 @@ const Intro = () => {
             {/* Dotted Pattern - Now Appears Below Image on Mobile */}
             <div className="grid grid-cols-6 gap-2 mt-4 md:absolute md:mt-0 md:-top-24 md:-right-5 w-28 sm:w-36 md:w-44 h-16 sm:h-20 md:h-24">
               {Array.from({ length: 30 }).map((_, i) => (
-                <span key={i} className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full"></span>
+                <span
+                  key={i}
+                  className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full"
+                ></span>
               ))}
             </div>
           </div>
