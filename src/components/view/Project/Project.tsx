@@ -11,33 +11,58 @@ const projects = [
     id: 1,
     title: "Dashboard Design",
     category: "UX/UI",
-    image:
-      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
   {
     id: 2,
-    title: "Dashboard Design",
+    title: "Logo Design",
     category: "Design",
-    image:
-      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
   {
     id: 3,
-    title: "Dashboard Design",
+    title: "Brand Identity",
     category: "Branding",
-    image:
-      "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+  },
+  {
+    id: 4,
+    title: "Mobile App Design",
+    category: "UX/UI",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+  },
+  {
+    id: 5,
+    title: "Brand Strategy",
+    category: "Branding",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
+  },
+  {
+    id: 6,
+    title: "Web Design",
+    category: "Design",
+    image: "https://i.postimg.cc/YC45gMYj/home-care-service-app-design-tubik.jpg",
   },
 ];
 
 const Project: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("UX/UI");
+  const [activeCategory, setActiveCategory] = useState("All Design");
+  const [showAll, setShowAll] = useState(false);
+
+  const filteredProjects =
+    activeCategory === "All Design"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
+
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   return (
     <section id="Project" className="py-10 px-4 sm:px-8 md:px-16 transition-all">
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Header */}
-        <p className="text-green-500 font-medium text-sm sm:text-base">Best Of Our Works</p>
+        <p className="text-green-500 font-medium text-sm sm:text-base">
+          Best Of Our Works
+        </p>
         <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mt-2">
           Latest Project
         </h2>
@@ -47,7 +72,10 @@ const Project: React.FC = () => {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {
+                setActiveCategory(category);
+                setShowAll(false);
+              }}
               className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                 activeCategory === category
                   ? "bg-green-500 text-white"
@@ -61,7 +89,7 @@ const Project: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <div key={project.id} className="relative group">
               <div className="relative w-full h-52 sm:h-60 md:h-64">
                 <Image
@@ -90,9 +118,14 @@ const Project: React.FC = () => {
         </div>
 
         {/* View Portfolio Button */}
-        <button className="mt-8 px-5 sm:px-6 py-3 bg-green-500 text-white rounded-full text-sm sm:text-lg font-medium hover:bg-green-600 transition-all">
-          View All Portfolio
-        </button>
+        {filteredProjects.length > 3 && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="mt-8 px-5 sm:px-6 py-3 bg-green-500 text-white rounded-full text-sm sm:text-lg font-medium hover:bg-green-600 transition-all"
+          >
+            {showAll ? "View Less" : "View All Portfolio"}
+          </button>
+        )}
       </div>
     </section>
   );
