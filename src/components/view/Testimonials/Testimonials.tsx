@@ -63,20 +63,19 @@ const Testimonials = () => {
   const testimonialsPerPage = 3;
   const totalSlides = Math.ceil(testimonialsData.length / testimonialsPerPage);
 
-  // Navigate to a specific group of 3
-  const handleDotClick = (index: number) => {
+  const handleDotClick = (index: any) => {
     setCurrentIndex(index * testimonialsPerPage);
   };
 
   return (
-    <section className="py-10 px-4 md:px-16">
+    <section className="py-10 px-4 md:px-10 lg:px-16 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h5 className="text-green-500 text-base font-semibold">
             Our Testimonials
           </h5>
-          <h2 className="text-5xl font-bold dark:text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white">
             What Clients Say?
           </h2>
         </div>
@@ -92,20 +91,26 @@ const Testimonials = () => {
           >
             {/* Each Group of Testimonials */}
             {Array.from({ length: totalSlides }).map((_, groupIndex) => (
-              <div key={groupIndex} className="flex w-full flex-shrink-0">
+              <div
+                key={groupIndex}
+                className="flex w-full flex-shrink-0 flex-col sm:flex-row"
+              >
                 {testimonialsData
                   .slice(
                     groupIndex * testimonialsPerPage,
                     (groupIndex + 1) * testimonialsPerPage
                   )
                   .map((testimonial, index) => (
-                    <div key={index} className="w-1/3 px-2">
+                    <div
+                      key={index}
+                      className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-6 sm:mb-0"
+                    >
                       <div className="p-6 rounded-2xl border border-green-500 transition-all min-h-[280px] flex flex-col justify-between hover:bg-green-500">
                         <div>
                           <h3 className="text-green-700 font-semibold flex items-center gap-2 hover:text-gray-700">
                             {testimonial.company}
                           </h3>
-                          <p className="text-gray-600 dark:text-gray-400 hover:dark:text-gray-600 text-sm  mt-2 ">
+                          <p className="text-gray-600 dark:text-gray-400 hover:dark:text-gray-600 text-sm mt-2">
                             {testimonial.feedback}
                           </p>
                         </div>
@@ -116,7 +121,7 @@ const Testimonials = () => {
                               alt={testimonial.name}
                               width={50}
                               height={50}
-                              className="rounded-full"
+                              className="rounded-full object-cover w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16"
                             />
                             <div>
                               <h4 className="font-semibold text-gray-700 hover:text-gray-700">
@@ -134,7 +139,7 @@ const Testimonials = () => {
                         </div>
                       </div>
                     </div>
-                  ))}  
+                  ))}
               </div>
             ))}
           </div>
