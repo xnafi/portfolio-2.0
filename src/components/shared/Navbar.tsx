@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { FaFacebookF, FaTwitter, FaDribbble, FaBehance } from "react-icons/fa"; // Import FontAwesome Icons
+import { FaFacebookF, FaTwitter, FaDribbble, FaBehance, FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
 
   useEffect(() => {
     setMounted(true);
@@ -16,42 +16,37 @@ const Navbar = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="flex justify-between items-center p-5 div-dark shadow-md">
-      <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
-        {/* Logo - Now Clickable */}
+    <nav className="p-5 shadow-md div-dark">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        {/* Logo */}
         <div className="font-bold text-xl flex items-center">
           <Link href="/">
-            <span className="text-green-500 text-2xl mr-1 cursor-pointer">
-              ●
-            </span>
+            <span className="text-green-500 text-2xl mr-1 cursor-pointer">●</span>
             <span className="cursor-pointer">TA.</span>
           </Link>
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigation Links (Hidden on Small Screens) */}
         <div className="space-x-8 hidden md:flex">
-          <a
-            href="#AwesomeService"
-            className="hover:text-green-500 transition"
-          >
+          <a href="#AwesomeService" className="hover:text-green-500 transition">
             Service
           </a>
-          <Link href="#works" className="hover:text-green-500 transition">
+          <a href="#Project" className="hover:text-green-500 transition">
             Works
-          </Link>
-          <Link href="#resume" className="hover:text-green-500 transition">
+          </a>
+          <a href="#resume" className="hover:text-green-500 transition">
             Resume
-          </Link>
-          <Link href="#skills" className="hover:text-green-500 transition">
+          </a>
+          <a href="#Skills" className="hover:text-green-500 transition">
             Skills
-          </Link>
-          <Link href="#contact" className="hover:text-green-500 transition">
+          </a>
+          <a href="#Contact" className="hover:text-green-500 transition">
             Contact
-          </Link>
+          </a>
         </div>
 
-        {/* Social Icons & Theme Toggle */}
-        <div className="flex items-center space-x-4">
+        {/* Social Links (Hidden on Small Screens) */}
+        <div className="hidden md:flex items-center space-x-4">
           <a href="#" className="text-gray-500 hover:text-green-500 transition">
             <FaDribbble size={20} />
           </a>
@@ -70,16 +65,43 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="p-2 text-xl "
+            className="p-2 text-xl"
           >
             {theme === "light" ? "🌙" : "🔆"}
           </button>
-
           <button className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 transition">
             Hire Me!
           </button>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-2xl">
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden mt-4 bg-gray-900 text-white rounded-md py-3 space-y-3 text-center">
+          <a href="#AwesomeService" className="block hover:text-green-400" onClick={() => setIsOpen(false)}>
+            Service
+          </a>
+          <a href="#Project" className="block hover:text-green-400" onClick={() => setIsOpen(false)}>
+            Works
+          </a>
+          <a href="#resume" className="block hover:text-green-400" onClick={() => setIsOpen(false)}>
+            Resume
+          </a>
+          <a href="#Skills" className="block hover:text-green-400" onClick={() => setIsOpen(false)}>
+            Skills
+          </a>
+          <a href="#Contact" className="block hover:text-green-400" onClick={() => setIsOpen(false)}>
+            Contact
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
