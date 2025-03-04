@@ -34,8 +34,9 @@ const Intro = () => {
         </div>
 
         {/* Image Section */}
-        <div className="relative flex-1 flex justify-center md:justify-end">
-          <div className="relative w-[250px] sm:w-[280px] md:w-[350px]">
+        <div className="relative flex-1 flex flex-col items-center md:flex-row md:justify-end">
+          <div className="relative w-[250px] sm:w-[280px] md:w-[350px] flex flex-col items-center">
+            {/* Image */}
             <Image
               src="https://i.postimg.cc/7Z7yy9b4/5556468.png"
               alt="Tawam"
@@ -43,8 +44,8 @@ const Intro = () => {
               height={350}
               className="rounded-lg shadow-lg w-full object-cover"
             />
-            {/* Dotted Pattern */}
-            <div className="absolute -top-6 sm:-top-10 md:-top-24 -right-4 sm:-right-5 w-28 sm:w-36 md:w-44 h-16 sm:h-20 md:h-24 grid grid-cols-6 gap-2">
+            {/* Dotted Pattern - Now Appears Below Image on Mobile */}
+            <div className="grid grid-cols-6 gap-2 mt-4 md:absolute md:mt-0 md:-top-24 md:-right-5 w-28 sm:w-36 md:w-44 h-16 sm:h-20 md:h-24">
               {Array.from({ length: 30 }).map((_, i) => (
                 <span key={i} className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full"></span>
               ))}

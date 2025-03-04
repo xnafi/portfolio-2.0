@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 
 const categories = ["All Design", "UX/UI", "Branding", "Design"];
@@ -62,11 +63,15 @@ const Project: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
           {projects.map((project) => (
             <div key={project.id} className="relative group">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-52 sm:h-60 md:h-64 object-cover rounded-lg group-hover:scale-105 transition-transform"
-              />
+              <div className="relative w-full h-52 sm:h-60 md:h-64">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg group-hover:scale-105 transition-transform"
+                />
+              </div>
               <div className="p-4 bg-white dark:bg-gray-900 rounded-lg flex justify-between items-center mt-4">
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-black dark:text-white">

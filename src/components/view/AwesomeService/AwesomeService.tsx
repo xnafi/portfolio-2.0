@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 
 const services = [
@@ -24,7 +27,7 @@ const AwesomeService = () => {
   return (
     <div id="AwesomeService" className="py-10 px-4 sm:px-8 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between gap-10">
-        {/* Left Section (Text) - Improved for Small Devices */}
+        {/* Left Section (Text) */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
             My Awesome <br className="hidden sm:block" /> Service
@@ -38,7 +41,7 @@ const AwesomeService = () => {
             ALL SERVICE
           </button>
 
-          {/* Dotted Pattern Below Button - Centered on Small Screens */}
+          {/* Dotted Pattern Below Button */}
           <div className="mt-10 sm:mt-16 w-36 sm:w-40 h-16 sm:h-20 grid grid-cols-6 gap-2 mx-auto md:mx-0">
             {Array.from({ length: 30 }).map((_, i) => (
               <span key={i} className="w-2 h-2 bg-green-500 rounded-full"></span>
@@ -54,11 +57,15 @@ const AwesomeService = () => {
               className="flex items-center justify-between p-4 sm:p-5 rounded-lg border border-green-300 dark:border-green-700 transition-all"
             >
               <div className="flex items-center space-x-4">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover rounded-lg"
-                />
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
                 <div>
                   <h3 className="text-base sm:text-lg md:text-xl font-semibold text-black dark:text-white">
                     {service.title}
