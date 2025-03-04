@@ -5,13 +5,13 @@ import { IoDocumentText } from "react-icons/io5";
 
 const Banner: React.FC = () => {
   return (
-    <section className="flex items-center justify-center px-6 py-12 md:py-16 lg:py-20">
+    <section className="flex items-center justify-center px-6 py-12 md:py-14 lg:py-14">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10 lg:gap-16 mx-auto">
         {/* Left - Profile Image & Social Links */}
         <div className="flex-1 flex flex-col items-center md:items-start">
           <div className="relative">
             {/* Profile Image */}
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div className="relative w-64 h-64 sm:w-72 sm:h-64 md:w-80 md:h-72 lg:w-96 lg:h-80">
               <Image
                 src="https://i.postimg.cc/7Z7yy9b4/5556468.png"
                 alt="Profile"
