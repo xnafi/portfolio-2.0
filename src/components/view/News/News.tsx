@@ -42,7 +42,7 @@ const News = () => {
           </button>
 
           {/* Dotted Pattern */}
-          <div className="w-44 h-24 grid grid-cols-6 gap-2 pt-10 lg:pt-20 mx-auto lg:mx-0">
+          <div className="w-44 h-24 grid grid-cols-6 gap-2 pt-10 lg:pt-32 mx-auto lg:mx-0">
             {Array.from({ length: 30 }).map((_, i) => (
               <span key={i} className="w-2 h-2 bg-green-500 rounded-full"></span>
             ))}
