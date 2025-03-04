@@ -11,7 +11,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 const Contact = () => {
   return (
-    <section className="py-10 px-4 md:px-16 transition-all duration-300">
+    <section id="Contact" className="py-10 px-4 md:px-16 transition-all duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h1 className="flex items-center justify-center text-7xl md:text-8xl font-bold text-gray-200 dark:text-gray-700 z-0 gap-4 mb-4">

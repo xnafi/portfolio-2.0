@@ -39,7 +39,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section className="py-10 px-4 md:px-16">
+    <section id="Skills" className="py-10 px-4 md:px-16">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Left Side */}
