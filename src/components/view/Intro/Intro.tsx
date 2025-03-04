@@ -19,12 +19,12 @@ const Intro = () => {
             Tawam
           </h2>
           <div className="mt-4 sm:mt-6 text-gray-700 dark:text-gray-300 space-y-4 sm:space-y-5">
-            <p className="flex items-center gap-2 text-sm sm:text-base md:text-lg">
+            <p className="flex items-center gap-2 text-sm para-text sm:text-base md:text-lg">
               <GoArrowUpRight className="text-green-500 text-3xl sm:text-4xl" /> I am
               working as a freelancer right now. I could create graphic design
               projects linked to all companies.
             </p>
-            <p className="flex items-center gap-2 text-sm sm:text-base md:text-lg">
+            <p className="flex items-center gap-2 text-sm para-text sm:text-base md:text-lg">
               <GoArrowUpRight className="text-green-500 text-5xl sm:text-6xl" /> With
               my graphic design skills, I can help you create awesome designs for
               your firm or business. I am constantly trying to improve my
