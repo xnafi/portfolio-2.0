@@ -54,7 +54,7 @@ const AwesomeService = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex items-center justify-between p-4 sm:p-5 rounded-lg border border-green-300 dark:border-green-700 transition-all"
+              className="flex items-center justify-between p-4 sm:p-5 rounded-lg hover:bg-green-500 dark:hover:bg-green-700 border border-green-300 dark:border-green-700 transition-all"
             >
               <div className="flex items-center space-x-4">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
