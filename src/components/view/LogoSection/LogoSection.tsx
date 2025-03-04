@@ -6,11 +6,11 @@ import { useTheme } from "next-themes";
 
 // Logo Images
 const logos = [
-  { srcLight: "https://i.postimg.cc/XJQ5RBYX/Chick-fil-A-Logo-1985.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "Bellhop" },
+  { srcLight: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "Bellhop" },
   { srcLight: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "Chick-fil-A" },
   { srcLight: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "Silvagni" },
   { srcLight: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "Channels" },
-  { srcLight: "https://i.postimg.cc/XJQ5RBYX/Chick-fil-A-Logo-1985.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "E-Studio" },
+  { srcLight: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", srcDark: "https://i.postimg.cc/yYQHD1k9/Chick-fil-A-logo.png", alt: "E-Studio" },
 ];
 
 const LogoSection: React.FC = () => {
