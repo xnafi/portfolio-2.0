@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaGithub, FaDribbble } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
 import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothLink from "@/components/re-ui/SmoothLink";
 
 const Banner: React.FC = () => {
   return (
@@ -69,9 +70,8 @@ const Banner: React.FC = () => {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6">
-                <button className="bg-green-500 text-white px-5 py-2 sm:px-6 sm:py-3 rounded-lg shadow-md hover:bg-green-700">
-                  HIRE ME!
-                </button>
+                <SmoothLink to="contact" duration={1000}  link="Hire Me" />
+                
                 <button className="btn-dark px-5 py-2 sm:px-6 sm:py-3 rounded-lg shadow-md">
                   VIEW WORK
                 </button>
