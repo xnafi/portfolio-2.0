@@ -5,16 +5,21 @@ interface SlinkProps {
   to: string;
   link: string;
   duration: number;
-  className: string;
+  className?: string;
 }
 
-export default function SmoothLink({ to, duration, link }: SlinkProps) {
+export default function SmoothLink({
+  to,
+  duration,
+  link,
+  className,
+}: SlinkProps) {
   return (
     <Link
       to={to}
       smooth={true}
       duration={duration}
-      className="bg-green-500 text-white px-5 py-2 sm:px-6 sm:py-3 rounded-lg shadow-md hover:bg-green-700"
+      className={`${className} cursor-pointer`}
     >
       {link}
     </Link>

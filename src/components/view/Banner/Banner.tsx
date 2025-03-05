@@ -3,13 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { FaGithub, FaDribbble } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
-import SmoothScroll from "@/components/re-ui/SmoothScroll";
-import SmoothLink from "@/components/re-ui/SmoothLink";
+import SmoothScroll from "@/components/re-ui/smoothScroll";
+import SmoothLink from "@/components/re-ui/smoothLink";
 
 const Banner: React.FC = () => {
   return (
     <SmoothScroll id="banner">
-      <section className="flex items-center justify-center px-6 py-12 md:py-14 lg:py-14">
+      <section className="flex items-center justify-center px-6 pt-24 lg:pt-32 lg:h-screen">
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10 lg:gap-16 mx-auto">
           {/* Left - Profile Image & Social Links */}
           <div className="flex-1 flex flex-col items-center md:items-start">
@@ -70,8 +70,13 @@ const Banner: React.FC = () => {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6">
-                <SmoothLink to="contact" duration={1000}  link="Hire Me" />
-                
+                <SmoothLink
+                  to="contact"
+                  duration={1000}
+                  link="Hire Me"
+                  className="bg-black text-white py-2 px-10 text-center"
+                />
+
                 <button className="btn-dark px-5 py-2 sm:px-6 sm:py-3 rounded-lg shadow-md">
                   VIEW WORK
                 </button>

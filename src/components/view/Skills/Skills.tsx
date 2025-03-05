@@ -1,5 +1,5 @@
 "use client";
-import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothScroll from "@/components/re-ui/smoothScroll";
 import React from "react";
 import { FaHtml5, FaReact, FaFigma } from "react-icons/fa";
 import { SiPhp } from "react-icons/si";

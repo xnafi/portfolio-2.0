@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { FaQuoteRight } from "react-icons/fa";
 import Image from "next/image";
-import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothScroll from "@/components/re-ui/smoothScroll";
 
 const testimonialsData = [
   {

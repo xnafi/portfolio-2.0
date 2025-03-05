@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
-import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothScroll from "@/components/re-ui/smoothScroll";
 
 const categories = ["All Design", "UX/UI", "Branding", "Design"];
 

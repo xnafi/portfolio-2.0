@@ -1,78 +1,65 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Link as SLink } from "react-scroll";
-import { FaFacebookF, FaTwitter, FaDribbble, FaBehance, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaDribbble,
+  FaBehance,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+import SmoothLink from "../re-ui/smoothLink";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isOpen, setIsOpen] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < lastScrollY) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   if (!mounted) return null;
 
   return (
-    <nav className="p-5 shadow-md div-dark">
+    <nav
+      className={`p-5 shadow-md div-dark fixed top-0 w-full transition-transform duration-300 z-50  ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      } bg-white dark:bg-gray-900`}
+    >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="font-bold text-xl flex items-center">
-          <SLink to="banner" smooth={true} duration={1000}>
-            <span className="text-green-500 text-2xl mr-1 cursor-pointer">
-              ●
-            </span>
-            <span className="cursor-pointer">TA.</span>
-          </SLink>
+          <SmoothLink to="banner" duration={1000} link="TA." />
         </div>
 
-        {/* Navigation Links (Hidden on Small Screens) */}
+        {/* Navigation Links */}
         <div className="space-x-8 hidden md:flex">
-          <SLink
-            to="services"
-            smooth={true}
-            duration={1000}
-            className="hover:text-green-500 transition"
-          >
-            Service
-          </SLink>
-          <SLink
-            to="project"
-            smooth={true}
-            duration={1000}
-            className="hover:text-green-500 transition"
-          >
-            Works
-          </SLink>
-          <SLink
-            to="experience"
-            smooth={true}
-            duration={1000}
-            className="hover:text-green-500 transition"
-          >
-            Qualifications
-          </SLink>
-          <SLink
-            to="skills"
-            smooth={true}
-            duration={1000}
-            className="hover:text-green-500 transition"
-          >
-            Skills
-          </SLink>
-          <SLink
-            to="contact"
-            smooth={true}
-            duration={1000}
-            className="hover:text-green-500 transition"
-          >
-            Contact
-          </SLink>
+          <SmoothLink to="services" duration={1000} link="Service" />
+          <SmoothLink to="project" duration={1000} link="Works" />
+          <SmoothLink to="experience" duration={1000} link="Qualifications" />
+          <SmoothLink to="skills" duration={1000} link="Skills" />
+          <SmoothLink to="contact" duration={1000} link="Contact" />
         </div>
 
-        {/* Social Links (Hidden on Small Screens) */}
+        {/* Social Links */}
         <div className="hidden md:flex items-center space-x-4">
           <a href="#" className="text-gray-500 hover:text-green-500 transition">
             <FaDribbble size={20} />
@@ -111,42 +98,37 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 bg-gray-900 text-white rounded-md py-3 space-y-3 text-center">
-          <a
-            href="#AwesomeService"
+        <div className="md:hidden mt-4 bg-white dark:bg-black dark:text-white text-black rounded-md py-3 space-y-3 text-left">
+          <SmoothLink
+            to="services"
+            duration={1000}
+            link="Service"
             className="block hover:text-green-400"
-            onClick={() => setIsOpen(false)}
-          >
-            Service
-          </a>
-          <a
-            href="#Project"
+          />
+          <SmoothLink
+            to="project"
+            duration={1000}
+            link="Works"
             className="block hover:text-green-400"
-            onClick={() => setIsOpen(false)}
-          >
-            Works
-          </a>
-          <a
-            href="#resume"
+          />
+          <SmoothLink
+            to="experience"
+            duration={1000}
+            link="Resume"
             className="block hover:text-green-400"
-            onClick={() => setIsOpen(false)}
-          >
-            Resume
-          </a>
-          <a
-            href="#Skills"
+          />
+          <SmoothLink
+            to="skills"
+            duration={1000}
+            link="Skills"
             className="block hover:text-green-400"
-            onClick={() => setIsOpen(false)}
-          >
-            Skills
-          </a>
-          <a
-            href="#Contact"
+          />
+          <SmoothLink
+            to="contact"
+            duration={1000}
+            link="Contact"
             className="block hover:text-green-400"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact
-          </a>
+          />
         </div>
       )}
     </nav>

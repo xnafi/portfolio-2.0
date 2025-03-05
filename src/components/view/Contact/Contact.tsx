@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothScroll from "@/components/re-ui/smoothScroll";
 import React from "react";
 import {
   FaTwitter,

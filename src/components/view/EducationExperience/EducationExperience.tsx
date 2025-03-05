@@ -1,7 +1,7 @@
 import React from "react";
 import Education from "./Education";
 import Experience from "./Experience";
-import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothScroll from "@/components/re-ui/smoothScroll";
 
 const EducationExperience = () => {
   return (
