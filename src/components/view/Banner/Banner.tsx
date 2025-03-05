@@ -3,8 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { FaGithub, FaDribbble } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
-import SmoothScroll from "@/components/re-ui/smoothScroll";
-import SmoothLink from "@/components/re-ui/smoothLink";
+import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothLink from "@/components/re-ui/SmoothLink";
 
 const Banner: React.FC = () => {
   return (

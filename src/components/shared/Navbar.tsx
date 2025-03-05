@@ -8,8 +8,12 @@ import {
   FaBehance,
   FaBars,
   FaTimes,
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
 } from "react-icons/fa";
-import SmoothLink from "../re-ui/smoothLink";
+import SmoothLink from "../re-ui/SmoothLink";
+import TooltipButton from "../re-ui/TooltipButton ";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -61,18 +65,27 @@ const Navbar = () => {
 
         {/* Social Links */}
         <div className="hidden md:flex items-center space-x-4">
-          <a href="#" className="text-gray-500 hover:text-green-500 transition">
-            <FaDribbble size={20} />
-          </a>
-          <a href="#" className="text-gray-500 hover:text-green-500 transition">
-            <FaBehance size={20} />
-          </a>
-          <a href="#" className="text-gray-500 hover:text-green-500 transition">
-            <FaFacebookF size={20} />
-          </a>
-          <a href="#" className="text-gray-500 hover:text-green-500 transition">
-            <FaTwitter size={20} />
-          </a>
+          <TooltipButton
+            href="#"
+            icon={<FaDribbble size={20} />}
+            tooltip={"Dribble"}
+          />
+
+          <TooltipButton
+            href="#"
+            icon={<FaGithub size={20} />}
+            tooltip={"Github"}
+          />
+          <TooltipButton
+            href="#"
+            icon={<FaTwitter size={20} />}
+            tooltip={"Twitter"}
+          />
+          <TooltipButton
+            href="#"
+            icon={<FaLinkedin size={20} />}
+            tooltip={"LinkedIn"}
+          />
         </div>
 
         {/* Theme Toggle & Hire Me Button */}

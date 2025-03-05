@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
-import SmoothScroll from "@/components/re-ui/smoothScroll";
+import SmoothScroll from "@/components/re-ui/SmoothScroll";
 
 const services = [
   {
