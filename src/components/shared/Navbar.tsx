@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTheme } from "next-themes";
 import {
   FaTwitter,
@@ -11,33 +11,26 @@ import {
 } from "react-icons/fa";
 import SmoothLink from "../re-ui/SmoothLink";
 import TooltipButton from "../re-ui/TooltipButton ";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const handleScroll = () => {
+    if (window.scrollY < lastScrollY) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+    setLastScrollY(window.scrollY);
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < lastScrollY) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-      setLastScrollY(window.scrollY);
-    };
-
+  if (typeof window !== "undefined") {
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  if (!mounted) return null;
+  }
 
   return (
     <nav
@@ -107,40 +100,45 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      {isOpen && (
-        <div className="md:hidden mt-4 bg-white dark:bg-black dark:text-white text-black rounded-md py-3 space-y-3 text-left">
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden md:hidden bg-white dark:bg-gray-900 rounded-md mt-2"
+      >
+        <div className="py-3 space-y-3 text-left">
           <SmoothLink
             to="services"
             duration={1000}
             link="Service"
-            className="block hover:text-green-400"
+            className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="project"
             duration={1000}
             link="Works"
-            className="block hover:text-green-400"
+            className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="experience"
             duration={1000}
             link="Resume"
-            className="block hover:text-green-400"
+            className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="skills"
             duration={1000}
             link="Skills"
-            className="block hover:text-green-400"
+            className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="contact"
             duration={1000}
             link="Contact"
-            className="block hover:text-green-400"
+            className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
         </div>
-      )}
+      </motion.div>
     </nav>
   );
 };
