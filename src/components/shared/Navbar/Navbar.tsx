@@ -9,9 +9,10 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
-import SmoothLink from "../re-ui/SmoothLink";
-import TooltipButton from "../re-ui/TooltipButton ";
+
 import { motion } from "framer-motion";
+import SmoothLink from "@/components/re-ui/SmoothLink";
+import TooltipButton from "@/components/re-ui/TooltipButton ";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();

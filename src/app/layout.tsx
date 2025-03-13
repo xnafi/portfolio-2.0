@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
+import Navbar from "@/components/shared/Navbar/Navbar";
 import ThemeProvider from "@/components/shared/ThemeProvider"; // Import ThemeProvider
 import Footer from "@/components/shared/Footer/Footer";
 
@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {/* Move ThemeProvider to a separate client component */}
         <ThemeProvider>
           <Navbar />
