@@ -41,17 +41,17 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="font-bold text-xl flex items-center">
-          <SmoothLink to="banner" duration={1000} link="TA." />
+        <div className="font-bold text-2xl flex items-center">
+          <span>TA.</span>
         </div>
 
         {/* Navigation Links */}
         <div className="space-x-8 hidden md:flex">
-          <SmoothLink to="services" duration={1000} link="Service" />
-          <SmoothLink to="project" duration={1000} link="Works" />
-          <SmoothLink to="experience" duration={1000} link="Qualifications" />
-          <SmoothLink to="skills" duration={1000} link="Skills" />
-          <SmoothLink to="contact" duration={1000} link="Contact" />
+          <SmoothLink to="services" duration={1000} name="Service" />
+          <SmoothLink to="project" duration={1000} name="Works" />
+          <SmoothLink to="experience" duration={1000} name="Qualifications" />
+          <SmoothLink to="skills" duration={1000} name="Skills" />
+          <SmoothLink to="contact" duration={1000} name="Contact" />
         </div>
 
         {/* Social Links */}
@@ -87,9 +87,6 @@ const Navbar = () => {
           >
             {theme === "light" ? "🌙" : "🔆"}
           </button>
-          <button className="px-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 transition">
-            Hire Me!
-          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -111,31 +108,31 @@ const Navbar = () => {
           <SmoothLink
             to="services"
             duration={1000}
-            link="Service"
+            name="Service"
             className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="project"
             duration={1000}
-            link="Works"
+            name="Works"
             className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="experience"
             duration={1000}
-            link="Resume"
+            name="Resume"
             className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="skills"
             duration={1000}
-            link="Skills"
+            name="Skills"
             className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
           <SmoothLink
             to="contact"
             duration={1000}
-            link="Contact"
+            name="Contact"
             className="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           />
         </div>

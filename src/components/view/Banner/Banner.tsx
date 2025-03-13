@@ -73,13 +73,15 @@ const Banner: React.FC = () => {
                 <SmoothLink
                   to="contact"
                   duration={1000}
-                  link="Hire Me"
-                  className="bg-black text-white py-2 px-10 text-center"
+                  variant="primary"
+                  name="Hire Me"
                 />
-
-                <button className="btn-dark px-5 py-2 sm:px-6 sm:py-3 rounded-lg shadow-md">
-                  VIEW WORK
-                </button>
+                <SmoothLink
+                  to="project"
+                  duration={1000}
+                  variant="secondary"
+                  name="View Work"
+                />
               </div>
             </div>
 
