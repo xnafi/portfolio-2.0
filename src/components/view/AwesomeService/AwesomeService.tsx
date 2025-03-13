@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import SmoothScroll from "@/components/re-ui/SmoothScroll";
+import SmoothLink from "@/components/re-ui/SmoothLink";
 
 const services = [
   {
@@ -28,7 +29,7 @@ const AwesomeService = () => {
   return (
     <SmoothScroll id="services">
       <div id="AwesomeService" className="py-10 px-4 sm:px-8 md:px-16">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between gap-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
           {/* Left Section (Text) */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
@@ -39,9 +40,16 @@ const AwesomeService = () => {
               vestibulum. Ut blandit fermentum, nulla neque mi convallis quis
               interdum sagittis.
             </p>
-            <button className="mt-5 sm:mt-6 px-5 sm:px-6 py-2 btn-dark rounded-lg font-semibold">
-              ALL SERVICE
-            </button>
+            {/* services button */}
+
+            <div className="w-full md:w-full mt-5">
+              <SmoothLink
+                to="services"
+                duration={1000}
+                variant="primary"
+                name="ALL SERVICE"
+              />
+            </div>
 
             {/* Dotted Pattern Below Button */}
             <div className="mt-10 sm:mt-16 w-36 sm:w-40 h-16 sm:h-20 grid grid-cols-6 gap-2 mx-auto md:mx-0">
@@ -59,7 +67,7 @@ const AwesomeService = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-4 sm:p-5 rounded-lg hover:bg-green-500 dark:hover:bg-green-700 border border-green-300 dark:border-green-700 transition-all"
+                className="text-lg flex justify-between items-center backdrop-blur-md lg:font-semibold isolation-auto border before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-4 overflow-hidden rounded-md group"
               >
                 <div className="flex items-center space-x-4">
                   <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">

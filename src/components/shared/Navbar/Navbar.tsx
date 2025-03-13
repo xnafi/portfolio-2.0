@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`p-5 shadow-md div-dark fixed top-0 w-full transition-transform duration-300 z-50  ${
+      className={`p-5 shadow-md div-dark fixed top-0 w-full transition-transform duration-300  z-50  ${
         visible ? "translate-y-0" : "-translate-y-full"
       } bg-white dark:bg-gray-900`}
     >
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="space-x-8 hidden md:flex">
+        <div className="md:space-x-1 lg:space-x-8 hidden md:flex">
           <SmoothLink to="services" duration={1000} name="Service" />
           <SmoothLink to="project" duration={1000} name="Works" />
           <SmoothLink to="experience" duration={1000} name="Qualifications" />
@@ -80,7 +80,7 @@ const Navbar = () => {
         </div>
 
         {/* Theme Toggle & Hire Me Button */}
-        <div className="flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="p-2 text-xl"
@@ -90,7 +90,13 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden justify-between items-center text-left flex space-x-3">
+          <button
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="p-2 text-xl"
+          >
+            {theme === "light" ? "🌙" : "🔆"}
+          </button>
           <button onClick={() => setIsOpen(!isOpen)} className="text-2xl">
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -102,7 +108,7 @@ const Navbar = () => {
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="overflow-hidden md:hidden bg-white dark:bg-gray-900 rounded-md mt-2"
+        className="overflow-hidden lg:hidden bg-white dark:bg-gray-900 rounded-md mt-2 "
       >
         <div className="py-3 space-y-3 text-left">
           <SmoothLink
