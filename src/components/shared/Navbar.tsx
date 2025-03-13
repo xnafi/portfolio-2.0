@@ -2,13 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import {
-  FaFacebookF,
   FaTwitter,
   FaDribbble,
-  FaBehance,
   FaBars,
   FaTimes,
-  FaFacebook,
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
