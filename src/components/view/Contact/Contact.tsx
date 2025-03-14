@@ -1,6 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+import InputField from "@/components/re-ui/InputField";
+import SmoothLink from "@/components/re-ui/SmoothLink";
 import SmoothScroll from "@/components/re-ui/SmoothScroll";
 import React from "react";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import {
   FaTwitter,
   FaFacebookF,
@@ -11,7 +15,26 @@ import {
 } from "react-icons/fa";
 import { GoArrowUpRight } from "react-icons/go";
 
-const Contact = () => {
+interface ContactForm {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
+}
+
+const Contact: React.FC = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactForm>();
+
+  const onSubmit: SubmitHandler<ContactForm> = (data) => {
+    console.log(data);
+  };
+
   return (
     <SmoothScroll id="contact">
       <section
@@ -29,27 +52,35 @@ const Contact = () => {
             {/* Left Form (2/3 Width on Large Screens) */}
             <div className="md:col-span-2 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
+                <InputField
+                  control={control}
+                  name="firstName"
                   placeholder="First Name"
-                  className="input-field w-full"
-                />
-                <input
                   type="text"
+                  required
+                />
+                <InputField
+                  control={control}
+                  name="lastName"
                   placeholder="Last Name"
-                  className="input-field w-full"
+                  type="text"
+                  required
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="email"
+                <InputField
+                  control={control}
+                  name="email"
                   placeholder="Email"
-                  className="input-field w-full"
+                  type="email"
+                  required
                 />
-                <input
-                  type="text"
+                <InputField
+                  control={control}
+                  name="phoneNumber"
                   placeholder="Phone Number"
-                  className="input-field w-full"
+                  type="text"
+                  required
                 />
               </div>
 
@@ -58,50 +89,63 @@ const Contact = () => {
                 <p className="text-gray-700 dark:text-gray-300 font-medium">
                   Select Subject?
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  {["Figma", "Web design", "Branding", "SEO"].map((subject) => (
-                    <label
-                      key={subject}
-                      className="flex items-center space-x-2"
-                    >
-                      <input
-                        type="radio"
-                        name="subject"
-                        className="w-4 h-4 accent-green-500"
-                      />
-                      <span className="text-gray-700 dark:text-gray-300">
-                        {subject}
-                      </span>
-                    </label>
-                  ))}
-                </div>
+                <Controller
+                  control={control}
+                  name="subject"
+                  rules={{ required: "Please select a subject" }}
+                  render={({ field }) => (
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      {["Figma", "Web design", "Branding", "SEO"].map(
+                        (subject) => (
+                          <label
+                            key={subject}
+                            className="flex items-center space-x-2"
+                          >
+                            <input
+                              type="radio"
+                              {...field}
+                              value={subject}
+                              className="w-4 h-4 accent-green-500"
+                            />
+                            <span className="text-gray-700 dark:text-gray-300">
+                              {subject}
+                            </span>
+                          </label>
+                        )
+                      )}
+                    </div>
+                  )}
+                />
+                {errors.subject && (
+                  <p className="text-red-500 text-sm">
+                    {errors.subject.message}
+                  </p>
+                )}
               </div>
 
               {/* Message Field */}
               <textarea
+                {...control.register("message", {
+                  required: "Please enter your message",
+                })}
                 placeholder="Write your message.."
-                rows={4}
-                className="input-field w-full resize-none"
+                rows={2}
+                className="input-field w-full resize-none !py-2 !px-0 my-2 !focus:outline-none !focus:ring-0"
               ></textarea>
+              {errors.message && (
+                <p className="text-red-500 text-sm !mt-1">
+                  {errors.message.message}
+                </p>
+              )}
 
               {/* Submit Button */}
-              <button className="flex items-center px-6 py-3 mt-6 btn-dark rounded-lg font-semibold transition-all">
-                <span>Let's Talk</span>
-                <svg
-                  className="ml-2 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </button>
+              <SmoothLink
+                duration={1000}
+                to=""
+                name="Let's Talk"
+                onClick={handleSubmit(onSubmit)}
+                variant="primary"
+              />
             </div>
 
             {/* Right Contact Info (1/3 Width) */}

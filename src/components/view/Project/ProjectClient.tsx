@@ -68,7 +68,7 @@ export default function ProjectClient() {
   return (
     <>
       {/* Category Filters */}
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4">
+      <div className="flex w-full justify-center gap-2 sm:gap-3 mt-4">
         {categories.map((category) => (
           <button
             key={category}
@@ -76,10 +76,10 @@ export default function ProjectClient() {
               setActiveCategory(category);
               setShowAll(false);
             }}
-            className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+            className={`flex flex-wrap text-xs sm:text-sm font-medium transition-all px-4 py-3 justify-center items-center ${
               activeCategory === category
                 ? "bg-blue-400 text-white rounded-md font-semibold"
-                : "flex items-center gap-2 bg-gray-100 backdrop-blur-md isolation-auto border mx-auto md:mx-0 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group"
+                : "bg-gray-100 backdrop-blur-md isolation-auto font-semibold border mx-auto md:mx-0 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 overflow-hidden rounded-md group"
             }`}
           >
             {category}
