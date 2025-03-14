@@ -32,19 +32,19 @@ const Banner: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10">
               <a
                 href="#"
-                className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-3 btn-dark rounded-lg"
+                className="flex items-center gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border mx-auto md:mx-0 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
               >
                 <FaGithub className="text-lg sm:text-xl" /> GitHub
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-3 btn-dark rounded-lg"
+                className="flex items-center gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border mx-auto md:mx-0 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
               >
                 <FaDribbble className="text-lg sm:text-xl" /> Dribbble
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-3 btn-dark rounded-lg"
+                className="flex items-center gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border mx-auto md:mx-0 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
               >
                 <IoDocumentText className="text-lg sm:text-xl" /> CV
               </a>
@@ -86,11 +86,14 @@ const Banner: React.FC = () => {
             </div>
 
             {/* Experience Box */}
-            <div className="flex justify-center md:justify-end mt-8 sm:mt-10">
-              <div className="btn-dark px-4 py-2 sm:px-5 sm:py-3 rounded-lg shadow-md text-center w-32 sm:w-40">
-                <p className="text-xs sm:text-sm">Years of Experience</p>
-                <p className="text-2xl sm:text-3xl font-bold">3+</p>
-              </div>
+            <div className="flex justify-center md:justify-end mt-8 sm:mt-10 pb-5 md:pb-0">
+              <SmoothLink
+                to="home"
+                duration={1000}
+                variant="outline"
+                name="Years of Experience 3+"
+                className="!tex-center mx-auto"
+              />
             </div>
           </div>
         </div>
