@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
-import SmoothLink from "@/components/re-ui/SmoothLink";
 
 const categories = ["All Design", "UX/UI", "Branding", "Design"];
 

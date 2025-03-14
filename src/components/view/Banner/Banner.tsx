@@ -9,7 +9,7 @@ import SmoothLink from "@/components/re-ui/SmoothLink";
 const Banner: React.FC = () => {
   return (
     <SmoothScroll id="banner">
-      <section className="flex items-center justify-center px-6 pt-24 lg:pt-32 lg:h-screen">
+      <section className="flex items-center justify-center px-4 pt-24 lg:pt-32 lg:h-screen">
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10 lg:gap-16 mx-auto">
           {/* Left - Profile Image & Social Links */}
           <div className="flex-1 flex flex-col items-center md:items-start">
@@ -29,7 +29,7 @@ const Banner: React.FC = () => {
             </div>
 
             {/* Social Links - Column on mobile, Row on larger screens */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10">
+            <div className="md:flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10 hidden">
               <a
                 href="#"
                 className="flex items-center gap-2 bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border mx-auto md:mx-0 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-blue-400 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 z-10 px-6 py-2 overflow-hidden rounded-md group dark:text-black"
